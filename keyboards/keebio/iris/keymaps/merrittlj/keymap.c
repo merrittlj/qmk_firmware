@@ -5,6 +5,7 @@
 
 enum layers {
     _DVORAK,
+    _MTGAP,
     _QWERTY,
     _SHIFT,
     _SYMBOL,
@@ -14,6 +15,7 @@ enum layers {
 
 enum custom_keycodes {
   DVORAK = SAFE_RANGE,
+  MTGAP,
   QWERTY,
   SYMBOL,
   FUNCTION,
@@ -57,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_DOWN, KC_TAB,  KC_Q,    KC_J,    KC_K,    KC_X,    MO(_ADDITIONAL),  MO(_FUNCTION),KC_B,KC_M,   KC_W,    KC_V,    KC_Z,    KC_PGDN,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    DF(_QWERTY),KC_CAPS,KC_SPC,                  MO(_SYMBOL),KC_LEFT,KC_RIGHT
+                                    DF(_QWERTY),DF(_MTGAP),KC_SPC,               MO(_SYMBOL),KC_LEFT,KC_RIGHT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -71,7 +73,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    MO(_ADDITIONAL),  MO(_FUNCTION),KC_N,KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RALT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    DF(_DVORAK),KC_CAPS,KC_SPC,                  MO(_SYMBOL),KC_LEFT,KC_RIGHT
+                                    DF(_DVORAK),DF(_MTGAP),KC_SPC,               MO(_SYMBOL),KC_LEFT,KC_RIGHT
+                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+ ),
+
+ [_MTGAP] = LAYOUT(
+  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+     XXXXXXX, KC_Y,    KC_P,    KC_O,    KC_U,    KC_J,                               KC_K,    KC_D,    KC_L,    KC_C,    KC_W,    XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, KC_I,    KC_N,    KC_E,    KC_A,    KC_COMMA,                           KC_M,    KC_H,    KC_T,    KC_S,    KC_R,    XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, KC_Q,    KC_Z,    KC_QUOT, KC_DOT,  KC_COLN,                            KC_B,    KC_F,    KC_G,    KC_V,    KC_X,    XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SPC,  XXXXXXX,          XXXXXXX, KC_BSPC, KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
+                                    XXXXXXX, DF(_DVORAK),XXXXXXX,                XXXXXXX, XXXXXXX, XXXXXXX
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
  ),
 
@@ -91,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FUNCTION] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, KC_F7,   KC_F5,   KC_F3,   KC_F1,   KC_F9,                              KC_F10,  KC_F2,   KC_F4,   KC_F6,   KC_F8,   XXXXXXX,
+     KC_F11,  KC_F7,   KC_F5,   KC_F3,   KC_F1,   KC_F9,                              KC_F10,  KC_F2,   KC_F4,   KC_F6,   KC_F8,   KC_F12,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      XXXXXXX, QK_REP,  QK_AREP, QK_LOCK, KC_BTN4, KC_BTN5,                            KC_SCRL, KC_HOME, KC_END,  QK_BOOT, KC_PWR,  XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
