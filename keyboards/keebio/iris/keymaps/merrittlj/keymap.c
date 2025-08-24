@@ -5,7 +5,7 @@
 
 enum layers {
     _DVORAK,
-    _MTGAP,
+    _HEYYOU,
     _QWERTY,
     _SHIFT,
     _SYMBOL,
@@ -15,7 +15,7 @@ enum layers {
 
 enum custom_keycodes {
   DVORAK = SAFE_RANGE,
-  MTGAP,
+  HEYYOU,
   QWERTY,
   SYMBOL,
   FUNCTION,
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_DOWN, KC_TAB,  KC_Q,    KC_J,    KC_K,    KC_X,    MO(_ADDITIONAL),  MO(_FUNCTION),KC_B,KC_M,   KC_W,    KC_V,    KC_Z,    KC_PGDN,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    DF(_QWERTY),DF(_MTGAP),KC_SPC,               MO(_SYMBOL),KC_LEFT,KC_RIGHT
+                                    DF(_QWERTY),DF(_HEYYOU),KC_SPC,               MO(_SYMBOL),KC_LEFT,KC_RIGHT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -73,17 +73,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    MO(_ADDITIONAL),  MO(_FUNCTION),KC_N,KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RALT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    DF(_DVORAK),DF(_MTGAP),KC_SPC,               MO(_SYMBOL),KC_LEFT,KC_RIGHT
+                                    DF(_DVORAK),DF(_HEYYOU),KC_SPC,               MO(_SYMBOL),KC_LEFT,KC_RIGHT
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
  ),
 
- [_MTGAP] = LAYOUT(
+ [_HEYYOU] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, KC_Y,    KC_P,    KC_O,    KC_U,    KC_J,                               KC_K,    KC_D,    KC_L,    KC_C,    KC_W,    XXXXXXX,
+     XXXXXXX, KC_F,    KC_Y,    KC_O,    KC_U,    KC_Z,                               KC_Q,    KC_K,    KC_L,    KC_C,    KC_B,    XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, KC_I,    KC_N,    KC_E,    KC_A,    KC_COMMA,                           KC_M,    KC_H,    KC_T,    KC_S,    KC_R,    XXXXXXX,
+     XXXXXXX, KC_H,    KC_I,    KC_E,    KC_A,    KC_COMMA,                           KC_M,    KC_T,    KC_R,    KC_S,    KC_N,    XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, KC_Q,    KC_Z,    KC_QUOT, KC_DOT,  KC_COLN,                            KC_B,    KC_F,    KC_G,    KC_V,    KC_X,    XXXXXXX,
+     XXXXXXX, KC_J,    KC_X,    KC_SLSH, KC_DOT,  KC_QUOT,                            KC_G,    KC_D,    KC_W,    KC_V,    KC_P,    XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SPC,  XXXXXXX,          XXXXXXX, KC_BSPC, KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
